@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1704772718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1704772719}
+  - component: {fileID: 1704772720}
+  m_Layer: 0
+  m_Name: camera indicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1704772719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704772718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6489681271987522057}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1704772720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704772718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b86663d1013a3841a581f24136a613e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  mainCamera: {fileID: 0}
 --- !u!1 &1785008987357158258
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +134,7 @@ MonoBehaviour:
       m_Calls: []
   targetIsSelf: 0
   targetGO: {fileID: 9079619551535582436}
-  tweenTargetIsTargetGO: 1
+  tweenTargetIsTargetGO: 0
   delay: 0
   duration: 10
   easeType: 8
@@ -119,11 +164,11 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: 1
-  id: 
+  id: onChangeIn
   isRelative: 1
   isFrom: 0
   isIndependentUpdate: 0
-  autoKill: 1
+  autoKill: 0
   autoGenerate: 1
   isActive: 1
   isValid: 1
@@ -131,7 +176,7 @@ MonoBehaviour:
   animationType: 2
   targetType: 11
   forcedTargetType: 0
-  autoPlay: 1
+  autoPlay: 0
   useTargetAsV3: 0
   endValueFloat: 0
   endValueV3: {x: 0, y: 100, z: 0}
@@ -196,7 +241,7 @@ MonoBehaviour:
       m_Calls: []
   targetIsSelf: 0
   targetGO: {fileID: 4664076223814937795}
-  tweenTargetIsTargetGO: 1
+  tweenTargetIsTargetGO: 0
   delay: 0
   duration: 10
   easeType: 6
@@ -226,11 +271,11 @@ MonoBehaviour:
     m_RotationOrder: 4
   loopType: 0
   loops: -1
-  id: 
+  id: whileTrue
   isRelative: 0
   isFrom: 0
   isIndependentUpdate: 0
-  autoKill: 1
+  autoKill: 0
   autoGenerate: 1
   isActive: 1
   isValid: 1
@@ -238,7 +283,7 @@ MonoBehaviour:
   animationType: 14
   targetType: 11
   forcedTargetType: 0
-  autoPlay: 1
+  autoPlay: 0
   useTargetAsV3: 0
   endValueFloat: 0
   endValueV3: {x: 0.01, y: 0.01, z: 0.01}
@@ -293,6 +338,7 @@ Transform:
   - {fileID: 716220379831886434}
   - {fileID: 2828243507987568910}
   - {fileID: 2532146782018737698}
+  - {fileID: 1704772719}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -308,9 +354,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6e1ec7ad4a4d9f8f35adab09049a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggersNeeded: 4
   editorIndicators:
   - {fileID: 2532146782018737698}
+  - {fileID: 1704772719}
+  triggersNeeded: 1
 --- !u!1001 &1043216466917918089
 PrefabInstance:
   m_ObjectHideFlags: 0
