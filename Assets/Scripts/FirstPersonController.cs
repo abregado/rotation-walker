@@ -6,9 +6,9 @@ using UnityEngine.UI;
 [RequireComponent(typeof (CharacterController))]
 public class FirstPersonController : MonoBehaviour
 {
-    protected float moveSpeed = 15;
-    protected float jumpSpeed = 15;
-    protected float gravityStrength = 4;
+    public float moveSpeed = 15f;
+    public float jumpSpeed = 15f;
+    public float gravityStrength = 4f;
 
     public bool mouselookActive = true;
     public bool movementActive = true;
