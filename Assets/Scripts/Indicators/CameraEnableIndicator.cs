@@ -7,6 +7,7 @@ public class CameraEnableIndicator : MonoBehaviour, IIndicate
     private bool _state;
     public Camera target;
     public Camera mainCamera;
+    public Canvas HUD;
 
     public void Init()
     {
@@ -21,5 +22,6 @@ public class CameraEnableIndicator : MonoBehaviour, IIndicate
     private void UpdateIndicatorVisuals() {
         target.enabled = _state;
         mainCamera.enabled = !_state;
+        HUD.enabled = !_state;
     }
 }
