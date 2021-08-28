@@ -25,6 +25,8 @@ public class FirstPersonController : MonoBehaviour
     protected Camera characterCamera;
     protected CollisionFlags lastCollisionFlags;
 
+    private bool fixedUpdateMouseButtonDown = false;
+
     virtual protected void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -64,49 +66,65 @@ public class FirstPersonController : MonoBehaviour
 
         if (!jumpRequested)
             jumpRequested = Input.GetKeyDown(KeyCode.Space);
+
+        if (Input.GetMouseButtonDown(0))
+            fixedUpdateMouseButtonDown = true;
     }
 
-    virtual protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
-        if (!movementActive)
-            return;
-
-        Vector2 movement = new Vector2();
+       
+        
+        if (movementActive)
         {
-            if (Input.GetKey(KeyCode.A))
-                movement.x--;
-            if (Input.GetKey(KeyCode.D))
-                movement.x++;
-            if (Input.GetKey(KeyCode.W))
-                movement.y++;
-            if (Input.GetKey(KeyCode.S))
-                movement.y--;
-
-            movement.Normalize();
-        }
-
-        // always move along the camera forward as it is the direction that it being aimed at
-        Vector3 desiredMove = characterCamera.transform.forward * movement.y + characterCamera.transform.right * movement.x;
-
-        movementVector.x = desiredMove.x * moveSpeed;
-        movementVector.z = desiredMove.z * moveSpeed;
-
-        if (characterController.isGrounded)
-        {
-            movementVector.y = -STICK_TO_GROUND_FORCE;
-
-            if (jumpRequested)
+            Vector2 movement = new Vector2();
             {
-                movementVector.y = jumpSpeed;
-                jumpRequested = false;
+                if (Input.GetKey(KeyCode.A))
+                    movement.x--;
+                if (Input.GetKey(KeyCode.D))
+                    movement.x++;
+                if (Input.GetKey(KeyCode.W))
+                    movement.y++;
+                if (Input.GetKey(KeyCode.S))
+                    movement.y--;
+
+                movement.Normalize();
             }
-        }
-        else
-        {
-            movementVector += Physics.gravity * gravityStrength * Time.fixedDeltaTime;
+
+            // always move along the camera forward as it is the direction that it being aimed at
+            var cameraTransform = characterCamera.transform;
+            Vector3 desiredMove = cameraTransform.forward * movement.y + cameraTransform.right * movement.x;
+
+            movementVector.x = desiredMove.x * moveSpeed;
+            movementVector.z = desiredMove.z * moveSpeed;
+
+            if (characterController.isGrounded)
+            {
+                movementVector.y = -STICK_TO_GROUND_FORCE;
+
+                if (jumpRequested)
+                {
+                    movementVector.y = jumpSpeed;
+                    jumpRequested = false;
+                }
+            }
+            else
+            {
+                movementVector += Physics.gravity * gravityStrength * Time.fixedDeltaTime;
+            }
+
+            lastCollisionFlags = characterController.Move(movementVector * Time.fixedDeltaTime);
         }
 
-        lastCollisionFlags = characterController.Move(movementVector*Time.fixedDeltaTime);
+        if (fixedUpdateMouseButtonDown)
+        {
+            Ray ray = characterCamera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+            if (Physics.Raycast(ray, out RaycastHit hit, 1000000))
+                print("I'm looking at " + hit.transform.name);
+            else
+                print("I'm looking at nothing!");
+        }
+        fixedUpdateMouseButtonDown = false;
     }
 
 
