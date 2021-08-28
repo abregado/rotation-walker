@@ -120,9 +120,7 @@ public class FirstPersonController : MonoBehaviour
         {
             Ray ray = characterCamera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
             if (Physics.Raycast(ray, out RaycastHit hit, 1000000))
-                print("I'm looking at " + hit.transform.name);
-            else
-                print("I'm looking at nothing!");
+                hit.collider.GetComponent<BasicTrigger>()?.SetTriggerables(true);
         }
         fixedUpdateMouseButtonDown = false;
     }
