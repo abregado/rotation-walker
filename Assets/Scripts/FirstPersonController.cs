@@ -120,8 +120,10 @@ public class FirstPersonController : MonoBehaviour
         if (fixedUpdateMouseButtonDown)
         {
             Ray ray = characterCamera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
-            if (Physics.Raycast(ray, out RaycastHit hit, 1000000))
-                hit.collider.GetComponent<ButtonTrigger>()?.SetTriggerables(true);
+            if (Physics.Raycast(ray, out RaycastHit hit, 1000000)) {
+                ButtonTrigger trigger = hit.collider.GetComponent<ButtonTrigger>();
+                trigger?.ToggleState();
+            }
         }
         fixedUpdateMouseButtonDown = false;
     }

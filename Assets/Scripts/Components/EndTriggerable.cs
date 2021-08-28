@@ -4,8 +4,8 @@ using UnityEngine;
 public class EndTriggerable: MonoBehaviour, ITriggerable, IInit {
     public int triggersNeeded;
     public Transform[] editorIndicators;
-    private Dictionary<int, bool> _triggerStates;
     private List<IIndicate> _indicators;
+    private Dictionary<int, bool> _triggerStates;
     private bool _triggerState;
     public void Init(SetupHandler handler) {
         _triggerStates = new Dictionary<int, bool>();
@@ -23,11 +23,12 @@ public class EndTriggerable: MonoBehaviour, ITriggerable, IInit {
         foreach (IIndicate indicator in _indicators) {
             indicator.Init();
         }
+        
+        SetIndicators(_triggerState);
     }
     
     public void RoundStart() {
         
-        SetIndicatorsOff();
     }
     
     public void SetOn(ITrigger trigger) {
@@ -70,24 +71,17 @@ public class EndTriggerable: MonoBehaviour, ITriggerable, IInit {
         if (result != _triggerState) {
             _triggerState = result;
             if (_triggerState) {
-                SetIndicatorsOn();
+                SetIndicators(true);
                 return;
             } 
-            SetIndicatorsOff();
+            SetIndicators(false);
         }
     }
 
-    private void SetIndicatorsOn() {
+    private void SetIndicators(bool state) {
         foreach (IIndicate indicator in _indicators) {
-            indicator.SetState(true);
+            indicator.SetState(state);
         }
     }
-
-    private void SetIndicatorsOff() {
-        foreach (IIndicate indicator in _indicators) {
-            indicator.SetState(false);
-        }
-    }
-
 }
 
