@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 [RequireComponent(typeof (CharacterController))]
@@ -120,7 +121,7 @@ public class FirstPersonController : MonoBehaviour
         {
             Ray ray = characterCamera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
             if (Physics.Raycast(ray, out RaycastHit hit, 1000000))
-                hit.collider.GetComponent<BasicTrigger>()?.SetTriggerables(true);
+                hit.collider.GetComponent<ButtonTrigger>()?.SetTriggerables(true);
         }
         fixedUpdateMouseButtonDown = false;
     }
