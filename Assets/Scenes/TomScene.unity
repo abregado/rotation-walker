@@ -1090,46 +1090,6 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1369110557}
-    - target: {fileID: 4724451541605508088, guid: 6a3e12642bcc21a4c840448f605346a4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724451541605508088, guid: 6a3e12642bcc21a4c840448f605346a4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724451541605508088, guid: 6a3e12642bcc21a4c840448f605346a4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724451541605508088, guid: 6a3e12642bcc21a4c840448f605346a4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.081
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724451541605508090, guid: 6a3e12642bcc21a4c840448f605346a4, type: 3}
-      propertyPath: ShapeModule.angle
-      value: 15.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724451541605508090, guid: 6a3e12642bcc21a4c840448f605346a4, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724451541605508090, guid: 6a3e12642bcc21a4c840448f605346a4, type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724451541605508090, guid: 6a3e12642bcc21a4c840448f605346a4, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 12.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724451541605508090, guid: 6a3e12642bcc21a4c840448f605346a4, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 450.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724451541605508090, guid: 6a3e12642bcc21a4c840448f605346a4, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.42
-      objectReference: {fileID: 0}
     - target: {fileID: 4724451541937511562, guid: 6a3e12642bcc21a4c840448f605346a4, type: 3}
       propertyPath: m_RootOrder
       value: 21
