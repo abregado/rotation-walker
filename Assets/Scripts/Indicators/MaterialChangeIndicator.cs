@@ -19,10 +19,13 @@ public class MaterialChangeIndicator: MonoBehaviour, IIndicate {
     }
 
     private void UpdateIndicatorVisuals() {
-        if (_state) {
+        if (_state && trueMaterial) {
             _stateRenderer.material = trueMaterial;
             return;
         }
-        _stateRenderer.material = falseMaterial;
+
+        if (falseMaterial) {
+            _stateRenderer.material = falseMaterial;
+        }
     }
 }

@@ -1,23 +1,47 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Components {
     public class LockedButton: ButtonTrigger, ITriggerable {
+        
+        [Header("IItriggerable")]
         public int triggersNeeded;
-    
         private Dictionary<int, bool> _triggerStates;
         private bool _triggerState;
 
-        private IIndicate[] _triggeredIndicators; 
+        [Header("LockedButton")]
+        public Transform[] editorUnlockedIndicators;
+        public bool latching;
+        private List<IIndicate> _unlockedIndicators; 
 
         public override void Init(SetupHandler handler) {
             base.Init(handler);
+            
+            _unlockedIndicators = new List<IIndicate>();
+
+            foreach (Transform child in editorUnlockedIndicators) {
+                IIndicate indicator = child.GetComponent<IIndicate>();
+                if (indicator != null) {
+                    _unlockedIndicators.Add(indicator);
+                }
+            }
+            
+            
+            foreach (IIndicate indicator in _unlockedIndicators) {
+                indicator.Init();
+            }
+            
             _triggerStates = new Dictionary<int, bool>();
             _triggerState = false;
         }
 
         public override void ToggleState() {
+            if (IsTriggered && latching) {
+                return;
+            }
+            
             if (_triggerState) {
-                base.ToggleState();    
+                base.ToggleState(); 
             }
         }
 
@@ -50,6 +74,10 @@ namespace Components {
         }
         
         protected virtual void CheckForStateChange() {
+            if (IsTriggered && latching) {
+                return;
+            }
+            
             int count = 0;
             foreach (var pair in _triggerStates) {
                 if (pair.Value) {
@@ -61,10 +89,16 @@ namespace Components {
             if (result != _triggerState) {
                 _triggerState = result;
                 if (_triggerState) {
-                    SetIndicators(true);
+                    SetUnlockedIndicators(true);
                     return;
                 } 
-                SetIndicators(false);
+                SetUnlockedIndicators(false);
+            }
+        }
+        
+        private void SetUnlockedIndicators(bool state) {
+            foreach (IIndicate indicator in _unlockedIndicators) {
+                indicator.SetState(state);
             }
         }
     }

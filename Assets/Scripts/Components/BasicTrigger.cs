@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BasicTrigger : ActiveObjectBase, ITrigger
 {
+    [Header("ITrigger")]
     public Transform[] editorTriggerables;
     public bool editorIsTriggered;
-    
     public bool IsTriggered { get => editorIsTriggered; set => editorIsTriggered = value; }
     public List<ITriggerable> triggerables { get; set; }
 

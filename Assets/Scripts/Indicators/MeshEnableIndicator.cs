@@ -4,6 +4,7 @@ public class MeshEnableIndicator: MonoBehaviour, IIndicate {
 
     private bool _state;
     public MeshRenderer target;
+    public bool reversed;
 
     public void Init() {
         SetState(false);
@@ -15,6 +16,10 @@ public class MeshEnableIndicator: MonoBehaviour, IIndicate {
     }
 
     private void UpdateIndicatorVisuals() {
+        if (reversed) {
+            target.enabled = !_state;
+            return;
+        }
         target.enabled = _state;
     }
 }

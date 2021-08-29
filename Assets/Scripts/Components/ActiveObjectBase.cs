@@ -2,25 +2,26 @@
 using UnityEngine;
 
 public class ActiveObjectBase: MonoBehaviour {
-    private SetupHandler _handler;
     
+    [Header("ActiveObject")]
     public Transform[] editorIndicators;
-    private List<IIndicate> _indicators;
     
+    private List<IIndicate> _unlockedIndicators;
+    private SetupHandler _handler;
     public virtual void Init(SetupHandler handler) {
         _handler = handler;
         
-        _indicators = new List<IIndicate>();
+        _unlockedIndicators = new List<IIndicate>();
 
         foreach (Transform child in editorIndicators) {
             IIndicate indicator = child.GetComponent<IIndicate>();
             if (indicator != null) {
-                _indicators.Add(indicator);
+                _unlockedIndicators.Add(indicator);
             }
         }
         
         
-        foreach (IIndicate indicator in _indicators) {
+        foreach (IIndicate indicator in _unlockedIndicators) {
             indicator.Init();
         }
     }
@@ -30,7 +31,7 @@ public class ActiveObjectBase: MonoBehaviour {
     }
     
     protected void SetIndicators(bool state) {
-        foreach (IIndicate indicator in _indicators) {
+        foreach (IIndicate indicator in _unlockedIndicators) {
             indicator.SetState(state);
         }
     }
