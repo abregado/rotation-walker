@@ -20,8 +20,8 @@ public class CameraEnableIndicator : MonoBehaviour, IIndicate
     }
 
     private void UpdateIndicatorVisuals() {
-        target.enabled = _state;
-        mainCamera.enabled = !_state;
+        target.gameObject.SetActive(_state);
+        mainCamera.gameObject.SetActive(!_state);
         HUD.enabled = !_state;
     }
 }
