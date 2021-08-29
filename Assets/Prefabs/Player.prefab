@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1411451147}
   - component: {fileID: 1411451149}
   - component: {fileID: 1411451148}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1734423500}
   - component: {fileID: 1734423499}
   - component: {fileID: 1734423498}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 366302976304255332}
   - component: {fileID: 6567394548423961128}
   - component: {fileID: 7333038951057354795}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7675403583674663324}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
