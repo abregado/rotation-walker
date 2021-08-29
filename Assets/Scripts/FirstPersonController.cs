@@ -12,11 +12,12 @@ public class FirstPersonController : MonoBehaviour
     public float moveSpeed = 15f;
     public float jumpSpeed = 15f;
     public float gravityStrength = 4f;
+    public float interactionRange = 0.6f;
 
     public bool mouselookActive = true;
     public bool movementActive = true;
 
-    protected const float STICK_TO_GROUND_FORCE = 10;
+    protected const float STICK_TO_GROUND_FORCE = 1;
 
     protected Vector2 mouseSensitivity = new Vector2(2, 2);
     protected Vector2 currentEulerAngle = new Vector2(0, 90);
@@ -121,7 +122,7 @@ public class FirstPersonController : MonoBehaviour
         }
 
         Ray ray = characterCamera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
-        Physics.Raycast(ray, out RaycastHit hit, 0.3f);
+        Physics.Raycast(ray, out RaycastHit hit, interactionRange);
         ButtonTrigger trigger = hit.collider?.GetComponent<ButtonTrigger>();
 
         if (trigger && trigger.Interactable())
