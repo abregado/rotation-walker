@@ -952,16 +952,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7143058504613161601, guid: 13c37fa42133f624db385e26592d05a1, type: 3}
       propertyPath: editorIndicators.Array.size
-      value: 3
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143058504613161601, guid: 13c37fa42133f624db385e26592d05a1, type: 3}
+      propertyPath: editorTriggerables.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7143058504613161601, guid: 13c37fa42133f624db385e26592d05a1, type: 3}
       propertyPath: editorIndicators.Array.data[2]
       value: 
       objectReference: {fileID: 1829568936484755107}
+    - target: {fileID: 7143058504613161601, guid: 13c37fa42133f624db385e26592d05a1, type: 3}
+      propertyPath: editorIndicators.Array.data[3]
+      value: 
+      objectReference: {fileID: 6969367920847898984}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13c37fa42133f624db385e26592d05a1, type: 3}
 --- !u!4 &23973472993381626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1816856096387100747, guid: 13c37fa42133f624db385e26592d05a1, type: 3}
+  m_PrefabInstance: {fileID: 1829568938190208177}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6969367920847898984 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8780827899437397465, guid: 13c37fa42133f624db385e26592d05a1, type: 3}
   m_PrefabInstance: {fileID: 1829568938190208177}
   m_PrefabAsset: {fileID: 0}

@@ -22,8 +22,8 @@ public class PlaySoundIndicator : MonoBehaviour, IIndicate
         {
             if ((state && playOnEnable) || (!state && playOnDisable))
                 source.Play();
-            else
-                source.Stop();
+            //else
+            //    source.Stop();
         }
     }
 }
