@@ -124,7 +124,7 @@ public class FirstPersonController : MonoBehaviour
         Physics.Raycast(ray, out RaycastHit hit, 0.3f);
         ButtonTrigger trigger = hit.collider?.GetComponent<ButtonTrigger>();
 
-        if (trigger)
+        if (trigger && trigger.Interactable())
         {
             normalCrosshair.enabled = false;
             hoverCrosshair.enabled = true;

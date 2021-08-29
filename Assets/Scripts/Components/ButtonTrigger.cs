@@ -4,4 +4,9 @@ public class ButtonTrigger : BasicTrigger {
         this.SetTriggerables(!IsTriggered);
         SetIndicators(IsTriggered);
     }
+
+    public virtual bool Interactable()
+    {
+        return true;
+    }
 }

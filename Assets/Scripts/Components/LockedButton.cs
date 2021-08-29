@@ -36,13 +36,10 @@ namespace Components {
         }
 
         public override void ToggleState() {
-            if (IsTriggered && latching) {
+            if (!Interactable())
                 return;
-            }
             
-            if (_triggerState) {
-                base.ToggleState(); 
-            }
+            base.ToggleState(); 
         }
 
         public void SetOn(ITrigger trigger) {
@@ -100,6 +97,15 @@ namespace Components {
             foreach (IIndicate indicator in _unlockedIndicators) {
                 indicator.SetState(state);
             }
+        }
+        
+        public override bool Interactable()
+        {
+            if (IsTriggered && latching) {
+                return false;
+            }
+
+            return _triggerState;
         }
     }
 }
