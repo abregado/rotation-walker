@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 129771233446916375}
   - component: {fileID: 3918925156149755570}
   - component: {fileID: 1262739503596243576}
+  - component: {fileID: 4325354291278466707}
   m_Layer: 0
   m_Name: hangar_roundGlass
   m_TagString: Untagged
@@ -119,6 +120,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4325354291278466707
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758533913581366189}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1073131210727148815, guid: ef63efe66b080a740b3bc691b52c8213, type: 3}
 --- !u!1 &758533913613022093
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,6 +145,7 @@ GameObject:
   - component: {fileID: 129771233390487863}
   - component: {fileID: 3918925156160038546}
   - component: {fileID: 1262739503539425880}
+  - component: {fileID: 1866726265080485503}
   m_Layer: 0
   m_Name: hangar_smallB
   m_TagString: Untagged
@@ -204,6 +220,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1866726265080485503
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758533913613022093}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3464267350969649379, guid: 8378b098d6b9cae448efc52ce66dde34, type: 3}
 --- !u!1 &1175675476774441071
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +245,7 @@ GameObject:
   - component: {fileID: 216736121132380189}
   - component: {fileID: 7042544509930757471}
   - component: {fileID: 6933356223207790610}
+  - component: {fileID: 327078452204447499}
   m_Layer: 0
   m_Name: gate
   m_TagString: Untagged
@@ -288,6 +319,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &327078452204447499
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175675476774441071}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8, y: 0.9, z: 0.099999994}
+  m_Center: {x: -6.748919e-33, y: 0.45, z: 0}
 --- !u!1 &6079752787285142730
 GameObject:
   m_ObjectHideFlags: 0
