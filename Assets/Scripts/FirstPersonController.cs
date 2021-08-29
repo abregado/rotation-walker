@@ -6,6 +6,9 @@ using UnityEngine.UI;
 [RequireComponent(typeof (CharacterController))]
 public class FirstPersonController : MonoBehaviour
 {
+    public Image normalCrosshair;
+    public Image hoverCrosshair;
+    
     public float moveSpeed = 15f;
     public float jumpSpeed = 15f;
     public float gravityStrength = 4f;
@@ -117,13 +120,25 @@ public class FirstPersonController : MonoBehaviour
             lastCollisionFlags = characterController.Move(movementVector * Time.fixedDeltaTime);
         }
 
+        Ray ray = characterCamera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+        Physics.Raycast(ray, out RaycastHit hit, 0.3f);
+        ButtonTrigger trigger = hit.collider?.GetComponent<ButtonTrigger>();
+
+        if (trigger)
+        {
+            normalCrosshair.enabled = false;
+            hoverCrosshair.enabled = true;
+        }
+        else
+        {
+            normalCrosshair.enabled = true;
+            hoverCrosshair.enabled = false;
+        }
+        
         if (fixedUpdateMouseButtonDown)
         {
-            Ray ray = characterCamera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
-            if (Physics.Raycast(ray, out RaycastHit hit, 1000000)) {
-                ButtonTrigger trigger = hit.collider.GetComponent<ButtonTrigger>();
-                trigger?.ToggleState();
-            }
+           if (trigger)
+            trigger.ToggleState();
         }
         fixedUpdateMouseButtonDown = false;
     }
