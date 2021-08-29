@@ -652,6 +652,11 @@ PrefabInstance:
     - {fileID: 7600885838783374811, guid: 1517b34ca01447d41ac6d43960ebba1d, type: 3}
     - {fileID: 5665302037003899153, guid: 1517b34ca01447d41ac6d43960ebba1d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1517b34ca01447d41ac6d43960ebba1d, type: 3}
+--- !u!4 &533316052 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3705931536917702887, guid: 6a3e12642bcc21a4c840448f605346a4, type: 3}
+  m_PrefabInstance: {fileID: 855766103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &566343897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1829568936726035817, guid: d74b33cf0f6b7cd4da38b17240487e76, type: 3}
@@ -1415,6 +1420,18 @@ PrefabInstance:
       propertyPath: triggersNeeded
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6315827512599960062, guid: 307c88fe34ec41e4ab8a018e92128281, type: 3}
+      propertyPath: editorTriggerables.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315827512599960062, guid: 307c88fe34ec41e4ab8a018e92128281, type: 3}
+      propertyPath: editorTriggerables.Array.data[1]
+      value: 
+      objectReference: {fileID: 533316052}
+    - target: {fileID: 6315827512599960062, guid: 307c88fe34ec41e4ab8a018e92128281, type: 3}
+      propertyPath: editorTriggerables.Array.data[2]
+      value: 
+      objectReference: {fileID: 1378272470}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 307c88fe34ec41e4ab8a018e92128281, type: 3}
 --- !u!1001 &1727657638
@@ -1642,3 +1659,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8742549381671706801, guid: 4b68c46ef5871104fb5da45795b4177f, type: 3}
   m_PrefabInstance: {fileID: 1254582920}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1993028138
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1931257490495744332, guid: 4f76898cbc01d4d408fbbf21a6f6417c, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931257490495744332, guid: 4f76898cbc01d4d408fbbf21a6f6417c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931257490495744332, guid: 4f76898cbc01d4d408fbbf21a6f6417c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931257490495744332, guid: 4f76898cbc01d4d408fbbf21a6f6417c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931257490495744332, guid: 4f76898cbc01d4d408fbbf21a6f6417c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931257490495744332, guid: 4f76898cbc01d4d408fbbf21a6f6417c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931257490495744332, guid: 4f76898cbc01d4d408fbbf21a6f6417c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931257490495744332, guid: 4f76898cbc01d4d408fbbf21a6f6417c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931257490495744332, guid: 4f76898cbc01d4d408fbbf21a6f6417c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931257490495744332, guid: 4f76898cbc01d4d408fbbf21a6f6417c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931257490495744332, guid: 4f76898cbc01d4d408fbbf21a6f6417c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708149432575412399, guid: 4f76898cbc01d4d408fbbf21a6f6417c, type: 3}
+      propertyPath: m_Name
+      value: PieCrust
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4f76898cbc01d4d408fbbf21a6f6417c, type: 3}
